@@ -200,6 +200,12 @@ class Member < ActiveRecord::Base
     requested_at.present?
   end
 
+  def requested_with_secret?
+    request_secret.present?
+  end
+
+
+
   def pending?
     invite? || request?
   end

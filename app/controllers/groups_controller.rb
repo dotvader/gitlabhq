@@ -133,6 +133,8 @@ class GroupsController < Groups::ApplicationController
       :path,
       :public,
       :request_access_enabled,
+      :request_access_with_secret_enabled,
+      :secret,
       :share_with_group_lock,
       :visibility_level
     )

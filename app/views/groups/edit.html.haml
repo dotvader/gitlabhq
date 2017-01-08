@@ -26,6 +26,17 @@
         .col-sm-offset-2.col-sm-10
           = render 'shared/allow_request_access', form: f
 
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          = render 'shared/allow_request_access_with_secret', form: f
+
+      .form-group.group-secret-holder{:id => "group-secret-holder"}
+        = f.label :secret, class: 'control-label'
+        .col-sm-10
+          = f.text_area :secret, maxlength: 250,
+              class: 'form-control js-gfm-input', rows: 1
+
+
       = render 'group_lfs_settings', f: f
 
       .form-group

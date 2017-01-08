@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     post :approve_access_request, on: :member
   end
 
+  concern :access_requestable_with_secret do
+    post :request_access_with_secret, on: :collection
+    post :approve_access_request, on: :member
+  end
+
   concern :awardable do
     post :toggle_award_emoji, on: :member
   end

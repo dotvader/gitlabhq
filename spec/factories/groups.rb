@@ -20,6 +20,10 @@ FactoryGirl.define do
       request_access_enabled true
     end
 
+    trait :access_requestable_with_secret do
+      request_access_with_secret_enabled true
+    end
+
     trait :nested do
       parent factory: :group
     end

@@ -4,7 +4,7 @@ scope(path: 'groups/*group_id',
       module: :groups,
       as: :group,
       constraints: { group_id: Gitlab::Regex.namespace_route_regex }) do
-  resources :group_members, only: [:index, :create, :update, :destroy], concerns: :access_requestable do
+  resources :group_members, only: [:index, :create, :update, :destroy], concerns: [:access_requestable, :access_requestable_with_secret] do
     post :resend_invite, on: :member
     delete :leave, on: :collection
   end

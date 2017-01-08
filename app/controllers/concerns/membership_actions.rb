@@ -8,6 +8,18 @@ module MembershipActions
                 notice: 'Your request for access has been queued for review.'
   end
 
+  def request_access_with_secret
+    begin
+      membershipable.request_access_with_secret(current_user,params[:secret])
+
+      redirect_to polymorphic_path(membershipable),
+                  notice: 'Success. You have joined the group.'
+    end
+  rescue
+    redirect_to polymorphic_path(membershipable),
+                alert: 'Incorrect secret.'
+  end
+
   def approve_access_request
     Members::ApproveAccessRequestService.new(membershipable, current_user, params).execute
 

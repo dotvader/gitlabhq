@@ -207,6 +207,7 @@
           break;
         case 'groups:show':
           shortcut_handler = new ShortcutsNavigation();
+          new GroupSecretDialog();
           new NotificationsForm();
           new NotificationsDropdown();
           break;
@@ -224,6 +225,7 @@
         case 'groups:edit':
         case 'admin:groups:edit':
         case 'admin:groups:new':
+          new GroupEditForm();
           new GroupAvatar();
           break;
         case 'projects:tree:show':

@@ -68,6 +68,8 @@ class Admin::GroupsController < Admin::ApplicationController
       :name,
       :path,
       :request_access_enabled,
+      :request_access_with_secret_enabled,
+      :secret,
       :visibility_level
     )
   end

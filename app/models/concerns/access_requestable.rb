@@ -10,4 +10,8 @@ module AccessRequestable
   def request_access(user)
     Members::RequestAccessService.new(self, user).execute
   end
+
+  def request_access_with_secret(user, secret)
+    Members::RequestAccessWithSecretService.new(self, user, secret).execute
+  end
 end

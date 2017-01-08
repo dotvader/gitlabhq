@@ -179,6 +179,10 @@ module GitlabRoutingHelper
     request_access_group_group_members_path(group)
   end
 
+  def request_access_with_secret_group_members_path(group, *args)
+    request_access_with_secret_group_group_members_path(group)
+  end
+
   def leave_group_members_path(group, *args)
     leave_group_group_members_path(group)
   end

@@ -34,6 +34,11 @@ class GroupPolicy < BasePolicy
       can! :request_access
     end
 
+    if globally_viewable  && @subject.request_access_with_secret_enabled && !member
+      can! :request_access_with_secret
+    end
+
+
     additional_rules!(master)
   end
 

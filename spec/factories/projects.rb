@@ -28,6 +28,10 @@ FactoryGirl.define do
       request_access_enabled true
     end
 
+    trait :access_requestable_with_secret do
+      request_access_with_secret_enabled true
+    end
+
     trait :empty_repo do
       after(:create) do |project|
         project.create_repository

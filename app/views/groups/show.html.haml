@@ -21,6 +21,7 @@
       .group-buttons
         = render 'shared/members/access_request_buttons', source: @group
         = render 'shared/notifications/button', notification_setting: @notification_setting
+        = render 'shared/members/access_request_with_secret_buttons', source: @group
 
 .groups-header{ class: container_class }
   .top-area

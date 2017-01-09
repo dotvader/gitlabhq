@@ -19,6 +19,7 @@
 /* global NotificationsDropdown */
 /* global UsersSelect */
 /* global GroupAvatar */
+/* global GroupSecretEditForm */
 /* global LineHighlighter */
 /* global ShortcutsBlob */
 /* global ProjectFork */
@@ -225,7 +226,7 @@
         case 'groups:edit':
         case 'admin:groups:edit':
         case 'admin:groups:new':
-          new GroupEditForm();
+          new GroupSecretEditForm();
           new GroupAvatar();
           break;
         case 'projects:tree:show':
